@@ -2,43 +2,8 @@ from random import *
 from utils import *
 from time import *
 from playsound import playsound
-
-# basic settings
-SOCK_PRICE_COMMON = 10
-SOCK_PRICE_RARE = 50
-SOCK_PRICE_LEGEND = 200
-TASK_EASY_REWARD = 5
-TASK_HARD_REWARD = 40
-SOCK_COMMON_WAIT_SECS = 3
-
-# data
-work_hard = ["fysikk", "algoritmer", "software"]
-work_easy = ["ai", "skjær"]
-tasks_hard = ["timeliste", "meta-analyse"]
-tasks_easy = [
-    "finne eske til Q35",
-    "finne høytaler",
-    "push-ups, 50",
-    "pull-ups, 24",
-    "zalando, 20 min"
-    "oppdater plan"
-]
-rewards_small = [
-    "piano",
-    "gitar",
-    "mw2, 1 runde",
-    "paranoid android",
-    "snacks",
-    "pause 10 min",
-    "weird fishes",
-    "youtube, 1 video"
-]
-rewards_big = [
-    "better call saul, 1ep",
-    "mw2, 3 runder",
-    "pause 30 min",
-    "pause 20 min"
-]
+from settings import *
+from data import *
 
 # variables
 CUM_BUCK_INTERVAL = SOCK_COMMON_WAIT_SECS / SOCK_PRICE_COMMON
@@ -53,7 +18,7 @@ def got_continue():
 def got_work_easy():
     global activity
     work = choice(work_easy)
-    playsound("success.mp3", False)
+    playsound("res/success.mp3", False)
     print(
         f"You found some easy work: {work}. "
         f"\n\tDo this instead of {activity}")
@@ -62,7 +27,7 @@ def got_work_easy():
 def got_work_hard():
     global activity
     work = choice(work_hard)
-    playsound("success.mp3", False)
+    playsound("res/success.mp3", False)
     print(
         f"You found some hard work: {work}"
         f"\n\tDo this instead of {activity}."
@@ -78,9 +43,9 @@ def got_task_easy():
           f"to receive {TASK_EASY_REWARD} CumBucks.")
     done = input()
     while done != "done":
-        done = input(f"\t\t{done} is not done")
+        done = input(f"\t\"{done}\" is not done, try again.\n")
     cum_bucks += TASK_EASY_REWARD
-    playsound("success.mp3", False)
+    playsound("res/success.mp3", False)
     print(f"Task done, received {TASK_EASY_REWARD} CumBucks, you now have {cum_bucks}.")
     start = time()
 
@@ -94,9 +59,9 @@ def got_task_hard():
     )
     done = input()
     while done != "done":
-        done = input(f"\t\t{done} is not done")
+        done = input(f"\t\"{done}\" is not done, try again.\n")
     cum_bucks += TASK_HARD_REWARD
-    playsound("success.mp3", False)
+    playsound("res/success.mp3", False)
     print(f"Task done, received {TASK_HARD_REWARD} CumBucks, you now have {cum_bucks}.")
     start = time()
 
@@ -104,12 +69,12 @@ def got_reward_small():
     rew = choice(rewards_small)
     print("Something sticky...")
     sleep(1)
-    playsound("success.mp3", False)
+    playsound("res/success.mp3", False)
     print(f"...yeah, a reward! You got: {rew}")
 
     done = input(f"\tWrite -> done <- when you're done.\n")
     while done != "done":
-        done = input(f"\t\t{done} is not done")
+        done = input(f"\t\"{done}\" is not done, try again.\n")
 
     print(f"Go back to: {activity}")
 
@@ -117,12 +82,12 @@ def got_reward_big():
     rew = choice(rewards_big)
     print("Something sticky...")
     sleep(1)
-    playsound("success.mp3", False)
+    playsound("res/success.mp3", False)
     print(f"...JACKPOT!!! You got: {rew}")
 
     done = input(f"\tWrite -> done <- when you're done.\n")
     while done != "done":
-        done = input(f"\t\t{done} is not done")
+        done = input(f"\t\"{done}\" is not done, try again.\n")
 
     print(f"Go back to: {activity}")
 
@@ -216,13 +181,13 @@ while True:
     profit = int((time() - start) / CUM_BUCK_INTERVAL)
     start = time()
     cum_bucks += profit
-    playsound("cash_small.mp3", False)
+    playsound("res/cash_small.mp3", False)
     print(
         f"\tYou received {profit} CumBuck" + ("." if profit == 1 else "s.")
     )
 
     if not cum_bucks % sock_common.price:
-        playsound("cash_big.mp3", False)
+        playsound("res/cash_big.mp3", False)
         i = input(
             " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
             f"Welcome to the Sock Store. You have {cum_bucks} CumBucks.\n"
