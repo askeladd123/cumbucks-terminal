@@ -77,6 +77,7 @@ def got_reward_small():
         done = input(f"\t\"{done}\" is not done, try again.\n")
 
     print(f"Go back to: {activity}")
+    start = time()
 
 def got_reward_big():
     rew = choice(rewards_big)
@@ -90,6 +91,7 @@ def got_reward_big():
         done = input(f"\t\"{done}\" is not done, try again.\n")
 
     print(f"Go back to: {activity}")
+    start = time()
 
 class Sock:
     price = 10
@@ -162,7 +164,7 @@ sock_legend.reward_big_weight = 18
 
 # main loop
 input(
-    "If you don't like to think while making decisions, this program is for you. \n"
+    "\nIf you don't like to think while making decisions, this program is for you. \n"
     "To get you started, here's one free sock.\n"
     "Press -> enter <- to twist the sock."
 )
