@@ -3,7 +3,7 @@ A time management program with a twist. Instead of planning what to do, and when
 
 #### Requirements
 * python or python3
-* libraries listed in *requirement.txt*
+* libraries listed in [requirement.txt](requirement.txt)
 
 #### Run
 To use the program, install libraries with pip, then do ```python main.py```.
