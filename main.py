@@ -141,8 +141,8 @@ sock_common.reward_big_weight = 8
 sock_rare = Sock()
 sock_rare.price = SOCK_PRICE_RARE
 sock_rare.continue_weight = 40
-sock_rare.task_hard_weight = 2
-sock_rare.work_hard_weight = 2
+sock_rare.task_hard_weight = 4
+sock_rare.work_hard_weight = 6
 
 sock_rare.work_easy_weight = 10
 sock_rare.task_easy_weight = 14
@@ -153,8 +153,8 @@ sock_rare.reward_big_weight = 12
 sock_legend = Sock()
 sock_legend.price = SOCK_PRICE_LEGEND
 sock_legend.continue_weight = 40
-sock_legend.task_hard_weight = 2
-sock_legend.work_hard_weight = 2
+sock_legend.task_hard_weight = 4
+sock_legend.work_hard_weight = 8
 
 sock_legend.work_easy_weight = 10
 sock_legend.task_easy_weight = 14
