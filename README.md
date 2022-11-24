@@ -25,3 +25,18 @@ To use the program, install libraries with pip, then do ```python main.py```.
 * playsound 1.2.2
   * playing sounds async didn't work in newer versions
   * if you don't mind the delay try turning the second parameter in the ```playsound``` function to ```True```
+
+## Tips
+To get productive, you have to make a good config file. This is the rule of thumb:
+* work hard: 
+  * something that takes a long time, and you don't really want to
+* work easy:
+  * something that takes time, but doesn't feel slow
+* tasks hard:
+  * something that can be done today, but you don't really want to
+* tasks easy:
+  * something that can be done now, with low effort
+* rewards small:
+  * whatever gives you a dopamin refill
+* rewards big:
+  * something that you look forward to, or that gives your brain some rest
