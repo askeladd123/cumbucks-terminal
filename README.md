@@ -1,5 +1,5 @@
 # time-for-socks / Cum Buck Tycoon
-A time management program with a twist; instead of planning what to do, and when to take a break, the program rolls a dice and decides for you.
+A time management program with a twist; instead of planning what to do, and when to take a break, the program rolls a dice and decides for you. It is currently a terminal program, but I want to make an app eventually.
 
 ## Requirements
 * python or python3
