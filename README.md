@@ -40,3 +40,5 @@ To get productive, you have to make a good config file. This is the rule of thum
   * whatever gives you a dopamin refill
 * rewards big:
   * something that you look forward to, or that gives your brain some rest
+
+  Remember that it's better to be specific. Doing something hard is easier than deciding on it.
