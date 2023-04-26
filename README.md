@@ -5,7 +5,7 @@ This is a terminal program. Check out [cumbucks](https://github.com/askeladd123/
 
 ## Requirements
 * python or python3
-* libraries listed in [requirement.txt](requirement.txt)
+* ~~libraries listed in [requirement.txt](requirement.txt)~~
 * ```data.py``` file in format below
 
 ## data.py
